@@ -223,7 +223,7 @@ export function CreateUserDrawer({
             <input
               id="create-username"
               type="text"
-              placeholder="a.facheho"
+              placeholder="afacheho"
               value={form.username}
               onChange={(e) => {
                 setUsernameEdited(true);

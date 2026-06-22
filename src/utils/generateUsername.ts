@@ -1,8 +1,8 @@
 /**
  * @file    generateUsername.ts
  * @module  utils
- * @desc    Génère un identifiant : 1re lettre du prénom + "." + 7 premières lettres du nom.
- *          Ex. FACHEHOUN Augustin → a.facheho
+ * @desc    Génère un identifiant : 1re lettre du prénom + 7 premières lettres du nom.
+ *          Ex. FACHEHOUN Augustin → afacheho
  */
 
 function normalizeNamePart(value: string): string {
@@ -21,5 +21,5 @@ export function generateUsername(nom: string, prenom: string): string {
   if (!normalizedPrenom) return normalizedNom.slice(0, 8);
   if (!normalizedNom) return normalizedPrenom.slice(0, 8);
 
-  return `${normalizedPrenom.charAt(0)}.${normalizedNom.slice(0, 7)}`;
+  return `${normalizedPrenom.charAt(0)}${normalizedNom.slice(0, 7)}`;
 }
