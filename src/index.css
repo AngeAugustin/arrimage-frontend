@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+  /* Figma ARRI-IFU design tokens */
+  --color-cnss-primary: #185fa5;
+  --color-cnss-primary-dark: #004782;
+  --color-cnss-header: #1839a5;
+  --color-cnss-navy: #042c53;
+  --color-cnss-blue: #004782;
+  --color-cnss-bg: #f0f4f8;
+  --color-cnss-surface: #ffffff;
+  --color-cnss-border: #c2c6d2;
+  --color-cnss-input-bg: #f9f9ff;
+  --color-cnss-text: #424751;
+  --color-cnss-text-muted: #7a8fa6;
+  --color-cnss-placeholder: #6b7280;
+  --color-cnss-icon: #727782;
+  --color-cnss-active-nav: #dfe8fd;
+  --color-cnss-role-bg: rgba(212, 227, 255, 0.3);
+  --color-cnss-avatar: #c1d9ff;
+  --color-cnss-success: #0a6640;
+  --color-cnss-success-bg: #e6f9f1;
+  --color-cnss-error-bg: #ffdad6;
+  --color-cnss-error: #ba1a1a;
+  --color-cnss-error-text: #93000a;
+  --color-cnss-footer: #9bafc4;
+
+  /* Legacy aliases */
+  --color-cnss-green: #185fa5;
+  --color-cnss-green-dark: #004782;
+  --color-cnss-gray: #424751;
+  --color-cnss-gray-dark: #042c53;
+
+  --font-sans: "DM Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --shadow-card: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  --shadow-login: 0px 8px 10px -6px rgba(0, 0, 0, 0.3), 0px 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--color-cnss-bg);
+  color: var(--color-cnss-text);
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateX(0.75rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

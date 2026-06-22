@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Informations de Connexion Utilisateur</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 11pt;
+    background: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    padding: 30px 20px;
+  }
+
+  .page {
+    background: #fff;
+    width: 210mm;
+    min-height: 297mm;
+    padding: 20mm 20mm 20mm 20mm;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  }
+
+  /* ========== HEADER SECTION ========== */
+  .header {
+    display: flex;
+    gap: 0;
+    margin-bottom: 24px;
+  }
+
+  .header-left {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    flex: 0 0 auto;
+    padding-right: 16px;
+  }
+
+  .logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-top: 4px;
+  }
+
+  .org-info {
+    font-size: 9.5pt;
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .org-info .separator {
+    font-weight: bold;
+  }
+
+  .header-right {
+    flex: 1;
+    border: 1.5px dashed #888;
+    padding: 14px 18px;
+    margin-left: 10px;
+    background-color: #e8e8e8;
+  }
+
+  .user-field {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 10px;
+    font-size: 10.5pt;
+    font-weight: bold;
+  }
+
+  .user-field:last-child {
+    margin-bottom: 0;
+  }
+
+  .field-label {
+    text-decoration: underline;
+    min-width: 90px;
+    flex-shrink: 0;
+  }
+
+  .field-value {
+    margin-left: 8px;
+  }
+
+  /* ========== MAIN TITLE ========== */
+  .main-title {
+    text-align: center;
+    font-size: 14pt;
+    font-weight: bold;
+    margin: 22px 0 18px 0;
+    letter-spacing: 0.3px;
+  }
+
+  /* ========== DATA TABLE ========== */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 18px;
+    font-size: 10pt;
+  }
+
+  .data-table th {
+    border: 1.5px solid #000;
+    padding: 6px 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 10pt;
+    vertical-align: middle;
+  }
+
+  .data-table td {
+    border: 1.5px solid #000;
+    padding: 6px 10px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 10pt;
+  }
+
+  /* ========== NB SECTION ========== */
+  .nb-section {
+    margin-bottom: 18px;
+    padding-left: 4px;
+  }
+
+  .nb-title {
+    font-weight: bold;
+    font-size: 10.5pt;
+    margin-bottom: 8px;
+  }
+
+  .nb-list {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .nb-list > li {
+    position: relative;
+    padding-left: 18px;
+    margin-bottom: 6px;
+    font-size: 10pt;
+    line-height: 1.5;
+  }
+
+  .nb-list > li::before {
+    content: "-";
+    position: absolute;
+    left: 4px;
+  }
+
+  .sub-list {
+    list-style: none;
+    padding-left: 10px;
+    margin-top: 5px;
+  }
+
+  .sub-list li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 4px;
+    font-size: 10pt;
+    line-height: 1.5;
+  }
+
+  .sub-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    font-size: 10pt;
+  }
+
+  /* ========== IMPORTANT BOX ========== */
+  .important-box {
+    border: 2px solid #555;
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin-bottom: 30px;
+    background-color: #e8e8e8;
+  }
+
+  .important-title {
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    font-size: 10.5pt;
+    margin-bottom: 10px;
+  }
+
+  .important-list {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .important-list li {
+    position: relative;
+    padding-left: 18px;
+    margin-bottom: 7px;
+    font-style: italic;
+    font-size: 10pt;
+    line-height: 1.5;
+  }
+
+  .important-list li::before {
+    content: "-";
+    position: absolute;
+    left: 4px;
+  }
+
+  /* ========== SIGNATURE ========== */
+  .signature {
+    text-align: right;
+    margin-top: 120px;
+    padding-right: 20px;
+    font-size: 10.5pt;
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-left">
+      <img class="logo" src="data:image/png;base64,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" alt="Logo CNSS">
+      <div class="org-info">
+        <div>CAISSE NATIONALE</div>
+        <div>DE SECURITE SOCIALE</div>
+        <div class="separator">----------------------</div>
+        <div>DIRECTION GENERALE</div>
+        <div class="separator">----------------------</div>
+        <div>DIRECTION DES SYSTEMES</div>
+        <div>D'INFORMATION</div>
+      </div>
+    </div>
+
+    <div class="header-right">
+      <div class="user-field">
+        <span class="field-label">NOM :</span>
+        <span class="field-value">{{NOM}}</span>
+      </div>
+      <div class="user-field">
+        <span class="field-label">PRENOMS :</span>
+        <span class="field-value">{{PRENOMS}}</span>
+      </div>
+      <div class="user-field">
+        <span class="field-label">STRUCTURE :</span>
+        <span class="field-value">{{STRUCTURE}}</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN TITLE -->
+  <div class="main-title">VOS INFORMATIONS DE CONNEXION</div>
+
+  <!-- DATA TABLE -->
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>APPLICATION</th>
+        <th>LOGIN</th>
+        <th>MOT DE PASSE INITIAL<br>(A changer dès la 1<sup>ère</sup> connexion)</th>
+        <th>OBSERVATIONS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{APPLICATION}}</td>
+        <td>{{LOGIN}}</td>
+        <td>{{MOT_DE_PASSE}}</td>
+        <td>{{OBSERVATIONS}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- NB SECTION -->
+  <div class="nb-section">
+    <div class="nb-title">NB :</div>
+    <ul class="nb-list">
+      <li>Le mot de passe ne peut pas contenir le nom de compte de l'utilisateur ou des parties du nom complet de l'utilisateur ;</li>
+      <li>Longueur minimum du mot de passe : douze (12) caractères ;</li>
+      <li>Contenir des caractères provenant de trois des quatre catégories suivantes :
+        <ul class="sub-list">
+          <li>Caractères majuscules non accentués (A à Z)</li>
+          <li>Caractères minuscules non accentués (a à z)</li>
+          <li>Chiffres (0 à 9)</li>
+          <li>Caractères non alphabétiques (par exemple : !, $, #, %)</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <!-- IMPORTANT BOX -->
+  <div class="important-box">
+    <div class="important-title">IMPORTANT</div>
+    <ul class="important-list">
+      <li>Votre mot de passe est confidentiel et ne doit pas être communiqué à une tierce personne ;</li>
+      <li>Changez périodiquement votre mot de passe ;</li>
+      <li>Verrouillez votre ordinateur lorsque vous n'êtes pas à votre poste de travail.</li>
+    </ul>
+  </div>
+
+  <!-- SIGNATURE -->
+  <div class="signature">
+    La Direction des Systèmes d'Information
+  </div>
+
+</div>
+</body>
+</html>
